@@ -11,9 +11,10 @@ proto:
 	@echo "Generating Go code from .proto files..."
 	protoc \
 		-I=$(PROTO_SRC_DIR) \
-		--go_out=. \
-		--go-grpc_out=. \
+		--go_out=paths=source_relative:$(PROTO_OUT_DIR) \
+		--go-grpc_out=paths=source_relative:$(PROTO_OUT_DIR) \
 		$(PROTO_FILES)
+
 
 commit:
 	@echo "Adding and committing generated files..."
