@@ -23,15 +23,15 @@ const (
 )
 
 type Review struct {
-	state    protoimpl.MessageState `protogen:"open.v1"`
-	Platform string                 `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
-	// This field tracks review author name
-	Author        string                 `protobuf:"bytes,2,opt,name=author,proto3" json:"author,omitempty"`
-	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
-	Rating        float64                `protobuf:"fixed64,4,opt,name=rating,proto3" json:"rating,omitempty"`
-	Date          *timestamppb.Timestamp `protobuf:"bytes,5,opt,name=date,proto3" json:"date,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Platform        string                 `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
+	Author          string                 `protobuf:"bytes,2,opt,name=author,proto3" json:"author,omitempty"`
+	Content         string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
+	Rating          float64                `protobuf:"fixed64,4,opt,name=rating,proto3" json:"rating,omitempty"`
+	Recommendations []string               `protobuf:"bytes,5,rep,name=recommendations,proto3" json:"recommendations,omitempty"`
+	Date            *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=date,proto3" json:"date,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
 }
 
 func (x *Review) Reset() {
@@ -92,6 +92,13 @@ func (x *Review) GetRating() float64 {
 	return 0
 }
 
+func (x *Review) GetRecommendations() []string {
+	if x != nil {
+		return x.Recommendations
+	}
+	return nil
+}
+
 func (x *Review) GetDate() *timestamppb.Timestamp {
 	if x != nil {
 		return x.Date
@@ -103,13 +110,14 @@ var File_sharedpb_shared_proto protoreflect.FileDescriptor
 
 const file_sharedpb_shared_proto_rawDesc = "" +
 	"\n" +
-	"\x15sharedpb/shared.proto\x12\bsharedpb\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x01\n" +
+	"\x15sharedpb/shared.proto\x12\bsharedpb\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc8\x01\n" +
 	"\x06Review\x12\x1a\n" +
 	"\bplatform\x18\x01 \x01(\tR\bplatform\x12\x16\n" +
 	"\x06author\x18\x02 \x01(\tR\x06author\x12\x18\n" +
 	"\acontent\x18\x03 \x01(\tR\acontent\x12\x16\n" +
-	"\x06rating\x18\x04 \x01(\x01R\x06rating\x12.\n" +
-	"\x04date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x04dateB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
+	"\x06rating\x18\x04 \x01(\x01R\x06rating\x12(\n" +
+	"\x0frecommendations\x18\x05 \x03(\tR\x0frecommendations\x12.\n" +
+	"\x04date\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x04dateB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
 
 var (
 	file_sharedpb_shared_proto_rawDescOnce sync.Once
