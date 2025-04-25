@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.26.1
-// source: shared.proto
+// source: sharedpb/shared.proto
 
 package sharedpb
 
@@ -35,7 +35,7 @@ type Review struct {
 
 func (x *Review) Reset() {
 	*x = Review{}
-	mi := &file_shared_proto_msgTypes[0]
+	mi := &file_sharedpb_shared_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -47,7 +47,7 @@ func (x *Review) String() string {
 func (*Review) ProtoMessage() {}
 
 func (x *Review) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_proto_msgTypes[0]
+	mi := &file_sharedpb_shared_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -60,7 +60,7 @@ func (x *Review) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Review.ProtoReflect.Descriptor instead.
 func (*Review) Descriptor() ([]byte, []int) {
-	return file_shared_proto_rawDescGZIP(), []int{0}
+	return file_sharedpb_shared_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Review) GetPlatform() string {
@@ -98,11 +98,11 @@ func (x *Review) GetDate() *timestamppb.Timestamp {
 	return nil
 }
 
-var File_shared_proto protoreflect.FileDescriptor
+var File_sharedpb_shared_proto protoreflect.FileDescriptor
 
-const file_shared_proto_rawDesc = "" +
+const file_sharedpb_shared_proto_rawDesc = "" +
 	"\n" +
-	"\fshared.proto\x12\x06shared\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x01\n" +
+	"\x15sharedpb/shared.proto\x12\bsharedpb\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x01\n" +
 	"\x06Review\x12\x1a\n" +
 	"\bplatform\x18\x01 \x01(\tR\bplatform\x12\x16\n" +
 	"\x06author\x18\x02 \x01(\tR\x06author\x12\x18\n" +
@@ -111,24 +111,24 @@ const file_shared_proto_rawDesc = "" +
 	"\x04date\x18\x05 \x01(\v2\x1a.google.protobuf.TimestampR\x04dateB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
 
 var (
-	file_shared_proto_rawDescOnce sync.Once
-	file_shared_proto_rawDescData []byte
+	file_sharedpb_shared_proto_rawDescOnce sync.Once
+	file_sharedpb_shared_proto_rawDescData []byte
 )
 
-func file_shared_proto_rawDescGZIP() []byte {
-	file_shared_proto_rawDescOnce.Do(func() {
-		file_shared_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_shared_proto_rawDesc), len(file_shared_proto_rawDesc)))
+func file_sharedpb_shared_proto_rawDescGZIP() []byte {
+	file_sharedpb_shared_proto_rawDescOnce.Do(func() {
+		file_sharedpb_shared_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_sharedpb_shared_proto_rawDesc), len(file_sharedpb_shared_proto_rawDesc)))
 	})
-	return file_shared_proto_rawDescData
+	return file_sharedpb_shared_proto_rawDescData
 }
 
-var file_shared_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_shared_proto_goTypes = []any{
-	(*Review)(nil),                // 0: shared.Review
+var file_sharedpb_shared_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_sharedpb_shared_proto_goTypes = []any{
+	(*Review)(nil),                // 0: sharedpb.Review
 	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
 }
-var file_shared_proto_depIdxs = []int32{
-	1, // 0: shared.Review.date:type_name -> google.protobuf.Timestamp
+var file_sharedpb_shared_proto_depIdxs = []int32{
+	1, // 0: sharedpb.Review.date:type_name -> google.protobuf.Timestamp
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -136,26 +136,26 @@ var file_shared_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_shared_proto_init() }
-func file_shared_proto_init() {
-	if File_shared_proto != nil {
+func init() { file_sharedpb_shared_proto_init() }
+func file_sharedpb_shared_proto_init() {
+	if File_sharedpb_shared_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_proto_rawDesc), len(file_shared_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sharedpb_shared_proto_rawDesc), len(file_sharedpb_shared_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_shared_proto_goTypes,
-		DependencyIndexes: file_shared_proto_depIdxs,
-		MessageInfos:      file_shared_proto_msgTypes,
+		GoTypes:           file_sharedpb_shared_proto_goTypes,
+		DependencyIndexes: file_sharedpb_shared_proto_depIdxs,
+		MessageInfos:      file_sharedpb_shared_proto_msgTypes,
 	}.Build()
-	File_shared_proto = out.File
-	file_shared_proto_goTypes = nil
-	file_shared_proto_depIdxs = nil
+	File_sharedpb_shared_proto = out.File
+	file_sharedpb_shared_proto_goTypes = nil
+	file_sharedpb_shared_proto_depIdxs = nil
 }

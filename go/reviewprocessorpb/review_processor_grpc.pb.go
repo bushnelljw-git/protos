@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.26.1
-// source: review_processor.proto
+// source: reviewprocessorpb/review_processor.proto
 
 package reviewprocessorpb
 
@@ -118,5 +118,5 @@ var ReviewProcessor_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "review_processor.proto",
+	Metadata: "reviewprocessorpb/review_processor.proto",
 }

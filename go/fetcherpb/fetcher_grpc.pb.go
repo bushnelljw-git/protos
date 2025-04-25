@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.26.1
-// source: fetcher.proto
+// source: fetcherpb/fetcher.proto
 
 package fetcherpb
 
@@ -117,5 +117,5 @@ var ReviewFetcher_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "fetcher.proto",
+	Metadata: "fetcherpb/fetcher.proto",
 }
