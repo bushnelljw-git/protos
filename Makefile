@@ -16,6 +16,7 @@ proto:
 		$(PROTO_FILES)
 
 
+
 commit:
 	@echo "Adding and committing generated files..."
 	git add $(PROTO_OUT_DIR)
