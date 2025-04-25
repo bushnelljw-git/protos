@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fetcherpb;
+
+option go_package = "github.com/bushnelljw-git/protos/go/fetcherpb;fetcherpb";
+
+import "shared.proto";
+
+message FetchRequest {}
+
+message FetchResponse {
+  repeated shared.Review reviews = 1;
+}
+
+service ReviewFetcher {
+  rpc FetchReviews(FetchRequest) returns (FetchResponse);
+}
