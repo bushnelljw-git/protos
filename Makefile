@@ -11,8 +11,8 @@ proto:
 	@echo "Generating Go code from .proto files..."
 	protoc \
 		-I=$(PROTO_SRC_DIR) \
-		--go_out=$(PROTO_OUT_DIR) \
-		--go-grpc_out=$(PROTO_OUT_DIR) \
+		--go_out=. \
+		--go-grpc_out=. \
 		$(PROTO_FILES)
 
 commit:
