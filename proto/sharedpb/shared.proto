@@ -1,5 +1,5 @@
 syntax = "proto3";
-package shared;
+package sharedpb;
 
 option go_package = "github.com/bushnelljw-git/protos/go/sharedpb;sharedpb";
 

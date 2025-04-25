@@ -1,15 +1,16 @@
 syntax = "proto3";
+
 package reviewprocessorpb;
 
 option go_package = "github.com/bushnelljw-git/protos/go/reviewprocessorpb;reviewprocessorpb";
 
-import "shared.proto";
+import "sharedpb/shared.proto";
 
 message ReviewAnalysis {
-  string label = 1;
-  string response = 2;
+  string label = 1;    // "positive", "negative", "critical"
+  string response = 2; // natural human-like response
 }
 
 service ReviewProcessor {
-  rpc AnalyzeReview(shared.Review) returns (ReviewAnalysis);
+  rpc AnalyzeReview(sharedpb.Review) returns (ReviewAnalysis);
 }

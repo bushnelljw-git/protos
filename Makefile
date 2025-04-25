@@ -1,21 +1,20 @@
-# Makefile for building protobufs and committing changes to GitHub
-
 PROTO_SRC_DIR=proto
 PROTO_OUT_DIR=go
-PROTO_FILES=$(wildcard $(PROTO_SRC_DIR)/*.proto)
+PROTO_FILES=$(shell find $(PROTO_SRC_DIR) -name "*.proto")
 COMMIT_MSG="Update generated protobufs"
 
 all: proto commit
 
 proto:
 	@echo "Generating Go code from .proto files..."
-	protoc \
-		-I=$(PROTO_SRC_DIR) \
-		--go_out=paths=source_relative:$(PROTO_OUT_DIR) \
-		--go-grpc_out=paths=source_relative:$(PROTO_OUT_DIR) \
-		$(PROTO_FILES)
-
-
+	@mkdir -p $(PROTO_OUT_DIR)
+	@for file in $(PROTO_FILES); do \
+		protoc \
+			-I=$(PROTO_SRC_DIR) \
+			--go_out=paths=source_relative:$(PROTO_OUT_DIR) \
+			--go-grpc_out=paths=source_relative:$(PROTO_OUT_DIR) \
+			$$file; \
+	done
 
 commit:
 	@echo "Adding and committing generated files..."
