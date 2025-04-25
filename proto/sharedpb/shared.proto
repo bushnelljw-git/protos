@@ -7,6 +7,7 @@ import "google/protobuf/timestamp.proto";
 
 message Review {
   string platform = 1;
+  //This field tracks review author name
   string author = 2;
   string content = 3;
   double rating = 4;

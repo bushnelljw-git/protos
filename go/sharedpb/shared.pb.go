@@ -23,8 +23,9 @@ const (
 )
 
 type Review struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Platform      string                 `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	Platform string                 `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
+	// This field tracks review author name
 	Author        string                 `protobuf:"bytes,2,opt,name=author,proto3" json:"author,omitempty"`
 	Content       string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
 	Rating        float64                `protobuf:"fixed64,4,opt,name=rating,proto3" json:"rating,omitempty"`
