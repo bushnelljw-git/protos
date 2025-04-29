@@ -9,7 +9,7 @@ package sharedpb
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
+	_ "google.golang.org/protobuf/types/known/timestamppb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -29,7 +29,6 @@ type Review struct {
 	Content         string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
 	Rating          float64                `protobuf:"fixed64,4,opt,name=rating,proto3" json:"rating,omitempty"`
 	Recommendations []string               `protobuf:"bytes,5,rep,name=recommendations,proto3" json:"recommendations,omitempty"`
-	Date            *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=date,proto3" json:"date,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -99,25 +98,17 @@ func (x *Review) GetRecommendations() []string {
 	return nil
 }
 
-func (x *Review) GetDate() *timestamppb.Timestamp {
-	if x != nil {
-		return x.Date
-	}
-	return nil
-}
-
 var File_sharedpb_shared_proto protoreflect.FileDescriptor
 
 const file_sharedpb_shared_proto_rawDesc = "" +
 	"\n" +
-	"\x15sharedpb/shared.proto\x12\bsharedpb\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc8\x01\n" +
+	"\x15sharedpb/shared.proto\x12\bsharedpb\x1a\x1fgoogle/protobuf/timestamp.proto\"\x98\x01\n" +
 	"\x06Review\x12\x1a\n" +
 	"\bplatform\x18\x01 \x01(\tR\bplatform\x12\x16\n" +
 	"\x06author\x18\x02 \x01(\tR\x06author\x12\x18\n" +
 	"\acontent\x18\x03 \x01(\tR\acontent\x12\x16\n" +
 	"\x06rating\x18\x04 \x01(\x01R\x06rating\x12(\n" +
-	"\x0frecommendations\x18\x05 \x03(\tR\x0frecommendations\x12.\n" +
-	"\x04date\x18\x06 \x01(\v2\x1a.google.protobuf.TimestampR\x04dateB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
+	"\x0frecommendations\x18\x05 \x03(\tR\x0frecommendationsB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
 
 var (
 	file_sharedpb_shared_proto_rawDescOnce sync.Once
@@ -133,16 +124,14 @@ func file_sharedpb_shared_proto_rawDescGZIP() []byte {
 
 var file_sharedpb_shared_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_sharedpb_shared_proto_goTypes = []any{
-	(*Review)(nil),                // 0: sharedpb.Review
-	(*timestamppb.Timestamp)(nil), // 1: google.protobuf.Timestamp
+	(*Review)(nil), // 0: sharedpb.Review
 }
 var file_sharedpb_shared_proto_depIdxs = []int32{
-	1, // 0: sharedpb.Review.date:type_name -> google.protobuf.Timestamp
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_sharedpb_shared_proto_init() }
