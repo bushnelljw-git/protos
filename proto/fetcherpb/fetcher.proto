@@ -5,7 +5,9 @@ option go_package = "github.com/bushnelljw-git/protos/go/fetcherpb;fetcherpb";
 
 import "sharedpb/shared.proto";
 
-message FetchRequest {}
+message FetchRequest {
+  int32 user_id = 1;
+}
 
 message FetchResponse {
   repeated sharedpb.Review reviews = 1;
