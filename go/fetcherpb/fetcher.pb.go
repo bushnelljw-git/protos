@@ -24,7 +24,7 @@ const (
 
 type FetchRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int32                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,7 +59,7 @@ func (*FetchRequest) Descriptor() ([]byte, []int) {
 	return file_fetcherpb_fetcher_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *FetchRequest) GetUserId() int32 {
+func (x *FetchRequest) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
 	}
@@ -116,7 +116,7 @@ const file_fetcherpb_fetcher_proto_rawDesc = "" +
 	"\n" +
 	"\x17fetcherpb/fetcher.proto\x12\tfetcherpb\x1a\x15sharedpb/shared.proto\"'\n" +
 	"\fFetchRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x05R\x06userId\";\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\";\n" +
 	"\rFetchResponse\x12*\n" +
 	"\areviews\x18\x01 \x03(\v2\x10.sharedpb.ReviewR\areviews2R\n" +
 	"\rReviewFetcher\x12A\n" +
