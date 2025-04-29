@@ -11,6 +11,6 @@ message Review {
   string content = 3;
   double rating = 4;
   repeated string recommendations = 5;
-  google.protobuf.Timestamp date = 6;
+
 }
 
