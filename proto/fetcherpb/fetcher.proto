@@ -6,7 +6,7 @@ option go_package = "github.com/bushnelljw-git/protos/go/fetcherpb;fetcherpb";
 import "sharedpb/shared.proto";
 
 message FetchRequest {
-  int32 user_id = 1;
+  int64 user_id = 1;
 }
 
 message FetchResponse {
