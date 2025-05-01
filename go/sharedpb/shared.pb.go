@@ -23,13 +23,14 @@ const (
 
 type Review struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
-	Platform          string                 `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
-	Author            string                 `protobuf:"bytes,2,opt,name=author,proto3" json:"author,omitempty"`
-	Content           string                 `protobuf:"bytes,3,opt,name=content,proto3" json:"content,omitempty"`
-	Rating            float64                `protobuf:"fixed64,4,opt,name=rating,proto3" json:"rating,omitempty"`
-	Date              string                 `protobuf:"bytes,5,opt,name=date,proto3" json:"date,omitempty"`
-	Recommendations   []string               `protobuf:"bytes,6,rep,name=recommendations,proto3" json:"recommendations,omitempty"`
-	LlmClassification string                 `protobuf:"bytes,7,opt,name=llm_classification,json=llmClassification,proto3" json:"llm_classification,omitempty"`
+	Id                int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Platform          string                 `protobuf:"bytes,2,opt,name=platform,proto3" json:"platform,omitempty"`
+	Author            string                 `protobuf:"bytes,3,opt,name=author,proto3" json:"author,omitempty"`
+	Content           string                 `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty"`
+	Rating            float64                `protobuf:"fixed64,5,opt,name=rating,proto3" json:"rating,omitempty"`
+	Date              string                 `protobuf:"bytes,6,opt,name=date,proto3" json:"date,omitempty"`
+	Recommendations   []string               `protobuf:"bytes,7,rep,name=recommendations,proto3" json:"recommendations,omitempty"`
+	LlmClassification string                 `protobuf:"bytes,8,opt,name=llm_classification,json=llmClassification,proto3" json:"llm_classification,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -62,6 +63,13 @@ func (x *Review) ProtoReflect() protoreflect.Message {
 // Deprecated: Use Review.ProtoReflect.Descriptor instead.
 func (*Review) Descriptor() ([]byte, []int) {
 	return file_sharedpb_shared_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Review) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
 }
 
 func (x *Review) GetPlatform() string {
@@ -117,15 +125,16 @@ var File_sharedpb_shared_proto protoreflect.FileDescriptor
 
 const file_sharedpb_shared_proto_rawDesc = "" +
 	"\n" +
-	"\x15sharedpb/shared.proto\x12\bsharedpb\"\xdb\x01\n" +
-	"\x06Review\x12\x1a\n" +
-	"\bplatform\x18\x01 \x01(\tR\bplatform\x12\x16\n" +
-	"\x06author\x18\x02 \x01(\tR\x06author\x12\x18\n" +
-	"\acontent\x18\x03 \x01(\tR\acontent\x12\x16\n" +
-	"\x06rating\x18\x04 \x01(\x01R\x06rating\x12\x12\n" +
-	"\x04date\x18\x05 \x01(\tR\x04date\x12(\n" +
-	"\x0frecommendations\x18\x06 \x03(\tR\x0frecommendations\x12-\n" +
-	"\x12llm_classification\x18\a \x01(\tR\x11llmClassificationB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
+	"\x15sharedpb/shared.proto\x12\bsharedpb\"\xeb\x01\n" +
+	"\x06Review\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1a\n" +
+	"\bplatform\x18\x02 \x01(\tR\bplatform\x12\x16\n" +
+	"\x06author\x18\x03 \x01(\tR\x06author\x12\x18\n" +
+	"\acontent\x18\x04 \x01(\tR\acontent\x12\x16\n" +
+	"\x06rating\x18\x05 \x01(\x01R\x06rating\x12\x12\n" +
+	"\x04date\x18\x06 \x01(\tR\x04date\x12(\n" +
+	"\x0frecommendations\x18\a \x03(\tR\x0frecommendations\x12-\n" +
+	"\x12llm_classification\x18\b \x01(\tR\x11llmClassificationB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
 
 var (
 	file_sharedpb_shared_proto_rawDescOnce sync.Once
