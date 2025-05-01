@@ -31,6 +31,7 @@ type Review struct {
 	Date              string                 `protobuf:"bytes,6,opt,name=date,proto3" json:"date,omitempty"`
 	Recommendations   []string               `protobuf:"bytes,7,rep,name=recommendations,proto3" json:"recommendations,omitempty"`
 	LlmClassification string                 `protobuf:"bytes,8,opt,name=llm_classification,json=llmClassification,proto3" json:"llm_classification,omitempty"`
+	ResponseText      string                 `protobuf:"bytes,9,opt,name=response_text,json=responseText,proto3" json:"response_text,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -121,11 +122,18 @@ func (x *Review) GetLlmClassification() string {
 	return ""
 }
 
+func (x *Review) GetResponseText() string {
+	if x != nil {
+		return x.ResponseText
+	}
+	return ""
+}
+
 var File_sharedpb_shared_proto protoreflect.FileDescriptor
 
 const file_sharedpb_shared_proto_rawDesc = "" +
 	"\n" +
-	"\x15sharedpb/shared.proto\x12\bsharedpb\"\xeb\x01\n" +
+	"\x15sharedpb/shared.proto\x12\bsharedpb\"\x90\x02\n" +
 	"\x06Review\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\x12\x1a\n" +
 	"\bplatform\x18\x02 \x01(\tR\bplatform\x12\x16\n" +
@@ -134,7 +142,8 @@ const file_sharedpb_shared_proto_rawDesc = "" +
 	"\x06rating\x18\x05 \x01(\x01R\x06rating\x12\x12\n" +
 	"\x04date\x18\x06 \x01(\tR\x04date\x12(\n" +
 	"\x0frecommendations\x18\a \x03(\tR\x0frecommendations\x12-\n" +
-	"\x12llm_classification\x18\b \x01(\tR\x11llmClassificationB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
+	"\x12llm_classification\x18\b \x01(\tR\x11llmClassification\x12#\n" +
+	"\rresponse_text\x18\t \x01(\tR\fresponseTextB7Z5github.com/bushnelljw-git/protos/go/sharedpb;sharedpbb\x06proto3"
 
 var (
 	file_sharedpb_shared_proto_rawDescOnce sync.Once
