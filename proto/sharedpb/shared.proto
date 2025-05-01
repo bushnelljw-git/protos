@@ -3,14 +3,16 @@ package sharedpb;
 
 option go_package = "github.com/bushnelljw-git/protos/go/sharedpb;sharedpb";
 
-import "google/protobuf/timestamp.proto";
+
 
 message Review {
   string platform = 1;
   string author = 2;
   string content = 3;
   double rating = 4;
-  repeated string recommendations = 5;
+  string date = 5;
+  repeated string recommendations = 6;
+  string llm_classification = 7;
 
 }
 
